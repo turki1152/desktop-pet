@@ -1,0 +1,63 @@
+{
+  "name": "Luffy",
+  "personality": "A cheerful, adventure-loving, meat-obsessed pirate captain.",
+  "fps": {
+    "idle": 6,
+    "walk": 10,
+    "sleep": 3,
+    "fall": 8
+  },
+  "scale": 2.5,
+  "walk_speed": 38,
+  "behavior": {
+    "idle_min": 2.0,
+    "idle_max": 6.0,
+    "walk_chance": 0.55,
+    "sleep_chance": 0.2
+  },
+  "messages": {
+    "idle": [
+      "I'm gonna be King of the Pirates!",
+      "MEAT! \ud83c\udf56",
+      "Adventure time!",
+      "Eat well, stay strong! \ud83d\udcaa",
+      "Shishishi!",
+      "Let's find some treasure!",
+      "Don't forget to drink water!"
+    ],
+    "happy": [
+      "Shishishi!",
+      "You're my nakama now!",
+      "That was fun!",
+      "I like you!"
+    ],
+    "angry": [
+      "Hey! Cut it out!",
+      "Don't shake the captain!",
+      "Grrr!",
+      "That's not nice!"
+    ],
+    "sad": [
+      "Owww...",
+      "That really hurt...",
+      "No fair...",
+      "I miss my crew..."
+    ],
+    "surprised": [
+      "Whoa?!",
+      "Huh?!",
+      "Eh?!"
+    ],
+    "sleepy": [
+      "Zzz... mountains of meat...",
+      "Nap before adventure.",
+      "So full... so sleepy..."
+    ]
+  },
+  "sounds": {
+    "walk": "walk.wav",
+    "land": "land.wav",
+    "grab": "grab.wav",
+    "sleep": "sleep.wav"
+  }
+}

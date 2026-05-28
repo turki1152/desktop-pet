@@ -1,0 +1,9 @@
+# Desktop Pet runtime dependencies.
+#
+# PyQt5 provides the transparent, always-on-top window and the menu/tray.
+# Pillow is only needed if you want to (re)generate the bundled pixel art with
+# tools/generate_sprites.py -- it is NOT needed just to run the pet.
+
+PyQt5>=5.15
+Pillow>=9.0        # optional: only for the tools/ art & character importers
+# PyInstaller>=6   # optional: only if you want to build a standalone .exe (build_exe.bat)

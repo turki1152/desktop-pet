@@ -1,0 +1,23 @@
+# PyInstaller build artifacts
+build/
+dist/
+*.spec
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+
+# IDE / tool dirs
+.claude/
+.vscode/
+.idea/
+
+# User data (not source-controlled — created at runtime)
+settings.json
+reminders.json
+
+# Windows
+Thumbs.db
+Desktop.ini

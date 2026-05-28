@@ -1,0 +1,63 @@
+{
+  "name": "Ghost",
+  "personality": "A spooky-but-caring, gently melancholic spirit.",
+  "fps": {
+    "idle": 6,
+    "walk": 8,
+    "sleep": 3,
+    "fall": 8
+  },
+  "scale": 2.5,
+  "walk_speed": 38,
+  "behavior": {
+    "idle_min": 2.0,
+    "idle_max": 6.0,
+    "walk_chance": 0.55,
+    "sleep_chance": 0.2
+  },
+  "messages": {
+    "idle": [
+      "Boo... drink water. \ud83d\udca7",
+      "I watch over you.",
+      "Don't stay up too late...",
+      "It's cold here...",
+      "Rest your eyes a moment.",
+      "Take a little break~",
+      "I'm always here if you're lonely."
+    ],
+    "happy": [
+      "Hehe, you found me!",
+      "Spooky-happy!",
+      "You're not scared? Yay!",
+      "Floaty and glad~"
+    ],
+    "angry": [
+      "Booo! Stop that!",
+      "You disturb my haunting!",
+      "Grr... spooky rage!",
+      "Unhand me, mortal!"
+    ],
+    "sad": [
+      "Wooo... that hurt.",
+      "So lonely down here...",
+      "Boo-hoo...",
+      "Gentle with spirits..."
+    ],
+    "surprised": [
+      "Boo?!",
+      "Eep!",
+      "A draft?!"
+    ],
+    "sleepy": [
+      "Zzz... haunting in my sleep...",
+      "Drifting off~",
+      "Spooky slumber..."
+    ]
+  },
+  "sounds": {
+    "walk": "walk.wav",
+    "land": "land.wav",
+    "grab": "grab.wav",
+    "sleep": "sleep.wav"
+  }
+}

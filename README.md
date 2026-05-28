@@ -1,4 +1,4 @@
-# 🐾 Desktop Pet
+# Desktop Pet
 
 A lightweight, customizable **desktop mascot for Windows** — a tiny pixel-art
 character that sits, walks, naps, and falls along the top of your taskbar.
@@ -14,194 +14,189 @@ company while using almost no system resources.
 
 ---
 
-## ✨ Features
+## Features
 
 - **Truly transparent** — per-pixel alpha, no window frame, no taskbar button,
   no Alt-Tab entry. Just the character floats on your desktop.
 - **Lives on the taskbar** — automatically detects the taskbar position
-  (bottom / top / left / right) and DPI, and rests on top of it.
-- **Stays out of your way** — automatically hides while a full-screen app is in
-  front (games, full-screen video, slideshows) and reappears when you're back on
-  the desktop.
-- **Smooth sprite animations** — idle, walking, sleeping, and falling, driven by
-  a frame-rate-independent animation system.
-- **A little brain** — randomly decides to idle, wander left/right, or nap, with
-  edge detection so it never walks off the screen.
-- **Drag & drop** — left-click and drag the pet anywhere; let go and it falls
-  back down to the taskbar with gravity.
+  (bottom / top / left / right) and DPI. Rests right on top of it.
+- **Hides on fullscreen** — automatically disappears when a game, fullscreen
+  video, or slideshow is in front. Reappears when you return to the desktop.
+- **Smooth sprite animations** — idle, walking, sleeping, and falling, driven
+  by a frame-rate-independent animation engine.
+- **A little brain** — randomly idles, wanders left/right, or naps. Edge
+  detection keeps it from walking off the screen.
+- **Drag & drop** — left-click and drag the pet anywhere. Let go and it falls
+  back down to the taskbar under gravity.
 - **Personality speech bubbles** — each character has its own lines and randomly
-  pipes up with wholesome reminders like *"Drink some water!"* or *"Posture
-  check!"* — written to match its vibe (sassy cat, cheerful slime, caring ghost).
-- **Emotions** — pat it and it's **happy** 💗, shake it around and it gets
-  **angry** 💢, drop it from a height and it's **sad** 😢 — each shown with a mood
-  icon and a matching line.
-- **Reminders** — set a time and a message (e.g. *08:00 → Drink water*) and the
-  pet will pop a bubble to remind you. Add/remove them from the menu.
-- **Modern menu** — a clean, dark, rounded right-click menu (and matching
-  reminder dialog), also available from the system-tray icon.
-- **Multiple characters & easy modding** — every character is just a folder of
-  PNG frames. Drop in a new folder and it appears in the menu — no code needed.
-  Includes an **import tool** to turn a GIF or sprite sheet into a character.
-- **Adjustable size & animation speed**, remembered between runs.
-- **Retro sound effects** — each bundled character has its own little blips for
-  grabbing, walking, landing, and napping (zero-dependency, via `winsound`).
-  Toggle them with **Mute** in the menu.
-- **Low CPU & memory** — one small window, a single ~30 FPS timer, and
-  pre-scaled sprites mean the paint loop is just a blit.
+  pipes up with wellness nudges like *"Drink some water!"* or *"Posture check!"*
+- **Emotions** — pat it (happy), shake it (angry), drop it hard (sad). Each
+  triggers a matching mood icon and personality line.
+- **Reminders** — set a daily time and message. The pet pops a bubble to remind
+  you. Add, disable, or delete from the menu.
+- **Modern dark menu** — clean, rounded right-click menu and reminder dialog.
+  Also available from the system-tray icon.
+- **Five characters** — cat, slime, ghost, Naruto, and Luffy (original chibi
+  pixel art). Add your own by dropping a folder of PNG frames.
+- **Import tool** — turn any GIF or sprite sheet into a character automatically.
+- **Adjustable size and speed**, remembered between runs.
+- **Retro sound effects** — synthesized blips for grabbing, walking, landing,
+  and napping. Toggle with Mute in the menu.
+- **Low CPU and memory** — one small window, one ~30 FPS timer. The paint loop
+  is just a pixmap blit.
 
 ---
 
-## 🚀 Setup
+## Setup
 
 ### 1. Requirements
-- **Windows 10 / 11**
-- **Python 3.9+** ([python.org](https://www.python.org/downloads/) — tick
-  *"Add Python to PATH"* during install)
+
+- Windows 10 or 11
+- Python 3.9+ from [python.org](https://www.python.org/downloads/) — tick
+  **"Add Python to PATH"** during install
 
 ### 2. Install dependencies
+
 ```bat
 pip install -r requirements.txt
 ```
-> `PyQt5` is the only thing needed to run the pet. `Pillow` is optional and only
-> used if you want to regenerate the bundled art.
 
-### 3. Run it
+`PyQt5` is the only runtime dependency. `Pillow` is optional and only needed for
+the tools in `tools/`.
+
+### 3. Run
+
 ```bat
 python main.py
 ```
-Or simply **double-click `run.bat`** to start it with no console window.
 
-That's it — your pet appears on the taskbar. 🎉
+Or double-click **`run.bat`** to start with no console window.
 
-### 4. (Optional) Build a single-file `.exe`
-Want to run it without Python, or share it? Build one portable executable:
+### 4. Build a standalone `.exe` (optional)
+
+Want to run without Python, or share it?
 
 ```bat
 build_exe.bat
 ```
 
-This uses **PyInstaller** to produce a single file — `dist\DesktopPet.exe` —
-with the characters and assets bundled inside it. Move that one `.exe` anywhere
-(Desktop, USB stick, another PC) and double-click it — **no Python needed**.
+This produces a single portable file — **`dist\DesktopPet.exe`** — with all
+characters and assets bundled inside. Move it anywhere and double-click it. No
+Python needed. On first run it extracts editable `characters\` and `assets\`
+folders next to itself.
 
-On first run it creates editable `characters\` and `assets\` folders next to
-itself (so you can customise it and add your own characters), and saves
-`settings.json` / `reminders.json` there too.
-
-> Tip: to start your pet automatically at login, press `Win+R`, type
-> `shell:startup`, and drop a shortcut to `DesktopPet.exe` in that folder.
+> To auto-start at login: press `Win+R`, type `shell:startup`, and drop a
+> shortcut to `DesktopPet.exe` in that folder.
 
 ---
 
-## 🎮 Using your pet
+## Controls
 
 | Action | How |
 | --- | --- |
-| Move it around | **Left-click and drag** |
-| Drop it | **Release** — it falls to the taskbar |
-| **Pat it** (happy 💗) | **Quick click** without moving it |
-| **Annoy it** (angry 💢) | **Shake it** while dragging |
-| **Hurt its feelings** (sad 😢) | **Drop it from high up** |
-| Make it talk | Menu → **Say something** |
-| Open the menu | **Right-click** the pet (or its tray icon) |
+| Move it | Left-click and drag |
+| Drop it | Release — it falls to the taskbar |
+| Pat it (happy) | Quick click without moving it |
+| Annoy it (angry) | Shake it back and forth while dragging |
+| Hard drop (sad) | Drop it from high up |
+| Make it talk | Right-click → **Say something** |
+| Open menu | Right-click the pet or its tray icon |
 | Change character | Menu → **Change character** |
-| Resize | Menu → **Size** (Tiny … Large) |
-| Animation/walk speed | Menu → **Speed** (Slow … Turbo) |
-| Add a reminder | Menu → **Reminders → Add reminder…** |
-| Mute sounds | Menu → **Mute / Unmute** |
+| Resize | Menu → **Size** (Tiny / Small / Medium / Large) |
+| Speed | Menu → **Speed** (Slow / Normal / Fast / Turbo) |
+| Add a reminder | Menu → **Reminders** → **Add reminder…** |
+| Mute | Menu → **Mute / Unmute** |
 | Quit | Menu → **Exit** |
 
-Your character, size, speed, and mute choices are saved to `settings.json`, and
-reminders to `reminders.json` — both restored next time.
+Settings (character, size, speed, mute) are saved to `settings.json`.
+Reminders are saved to `reminders.json`. Both are restored on next run.
 
 ---
 
-## 💬 Messages, personality & emotions
+## Messages, personality, and emotions
 
-Every character chatters on its own with lines drawn from its `config.json`,
-grouped by mood:
+Every character chatters from its own `config.json`, grouped by mood:
 
-- **`idle`** — random everyday chatter and wellness nudges (*"Drink some
-  water!"*, *"Stretch those legs!"*). Shown every ~30–70s while idle/walking.
-- **`happy`** — when you **pat** it (a quick click).
-- **`angry`** — when you **shake** it around while dragging.
-- **`sad`** — when you **drop** it from a height (hard landing).
-- **`surprised`** / **`sleepy`** — small reactions to a bump or a nap.
+- **`idle`** — random chatter and wellness nudges, shown every 30–70 seconds
+  while idle or walking.
+- **`happy`** — triggered by a quick pat (click without dragging).
+- **`angry`** — triggered by shaking the pet while dragging.
+- **`sad`** — triggered by a hard drop from a height.
+- **`surprised`** / **`sleepy`** — shown on a bump or when lying down.
 
-The bundled pets have distinct voices: the **cat** is lazy and sassy, the
-**slime** is relentlessly wholesome, the **ghost** is spooky but caring,
-**Naruto** is an energetic never-give-up ninja (*"Believe it!"*), and **Luffy**
-is an adventure-loving, meat-obsessed captain (*"I'm gonna be King of the
-Pirates!"*). Edit any character's `messages` to give it your own voice.
+Each character has its own voice:
 
-> The Naruto and Luffy sprites here are **original chibi pixel art** inspired by
-> the characters — not official artwork — so the project stays free to share.
+| Character | Personality | Sample line |
+| --- | --- | --- |
+| Cat | Lazy and sassy | *"Feed me, human."* |
+| Slime | Wholesome and encouraging | *"You're doing amazing!"* |
+| Ghost | Spooky but caring | *"Don't stay up too late..."* |
+| Naruto | Energetic, never-give-up ninja | *"Believe it!"* |
+| Luffy | Adventure-loving pirate captain | *"I'm gonna be King of the Pirates!"* |
 
-## ⏰ Reminders
+Edit any character's `messages` in its `config.json` to give it your own voice.
 
-Right-click → **Reminders → Add reminder…**, pick a time and type a message
-(e.g. *"Drink water 💧"*). At that time each day your pet pops a bubble with the
-message and a little bell. Manage them from the same submenu (disable or delete).
-Reminders are stored in `reminders.json`.
+> The Naruto and Luffy sprites are **original chibi pixel art** inspired by the
+> characters, not official artwork, so the project stays free to share.
 
 ---
 
-## 🧩 Adding your own characters
+## Reminders
 
-Want a **One Piece**, **Naruto**, or **lofi**-style character? You don't need to
-draw anything — just grab some frames and import them. There are two ways.
+Right-click → **Reminders** → **Add reminder…**, pick a time, type a message
+(e.g. `Drink water`). The pet pops a bubble with a bell at that time every day.
+Manage reminders (enable, disable, delete) from the same submenu.
 
-### Folder layout
-A character is just a folder inside `characters/`. The structure is:
+---
+
+## Adding your own characters
+
+A character is a folder inside `characters/`:
 
 ```
 characters/
 └── mychar/
-    ├── config.json        (optional — sensible defaults are used)
-    ├── idle/              (required)  frame_00.png, frame_01.png, ...
-    ├── walk/              (optional)  frame_00.png, ...
-    ├── sleep/             (optional)  frame_00.png, ...
-    ├── fall/              (optional)  frame_00.png, ...
-    └── sounds/            (optional)  walk.wav, ...
+    ├── config.json        optional — sensible defaults are used
+    ├── idle/              required — frame_00.png, frame_01.png, ...
+    ├── walk/              optional
+    ├── sleep/             optional
+    ├── fall/              optional
+    └── sounds/            optional — walk.wav, land.wav, grab.wav, sleep.wav
 ```
 
-- **Frames** are PNGs with transparency, named `frame_00.png`, `frame_01.png`, …
-  played in order and looped. Any missing animation falls back to `idle`. Pixel
-  art works best (it's upscaled with nearest-neighbour so it stays crisp), but
-  any PNG works.
-- Restart the pet and your character appears under **Change character**.
+Frames are PNGs named `frame_00.png`, `frame_01.png`, etc., played in order
+and looped. Any missing animation falls back to `idle`. Pixel art is upscaled
+with nearest-neighbour so it stays crisp, but any PNG size works.
 
-### Easiest: import a GIF or sprite sheet (no editing needed)
-Find an animated **GIF** (e.g. a "Luffy running" loop) or a **sprite sheet**,
-then let the import tool slice it into frames and create a starter config:
+Restart the app and the character appears in **Change character**.
+
+### Import a GIF or sprite sheet
 
 ```bat
-REM Each GIF becomes one animation state:
-python tools/import_media.py --name luffy --state idle --gif idle.gif
-python tools/import_media.py --name luffy --state walk --gif run.gif
+:: Each GIF becomes one animation state:
+python tools/import_media.py --name mychar --state idle --gif idle.gif
+python tools/import_media.py --name mychar --state walk  --gif run.gif
 
-REM Or a horizontal sprite sheet of 4 frames:
-python tools/import_media.py --name naruto --state walk --sheet run.png --cols 4
+:: Horizontal sprite sheet of 4 frames:
+python tools/import_media.py --name mychar --state walk --sheet run.png --cols 4
 
-REM Grid sheet + key out a white background to transparency:
-python tools/import_media.py --name naruto --state idle --sheet sheet.png ^
+:: Grid sheet + key out a white background:
+python tools/import_media.py --name mychar --state idle --sheet sheet.png ^
     --fw 64 --fh 64 --bg "#ffffff" --tolerance 30
 ```
 
-It auto-trims transparent borders and writes `characters/<name>/config.json`.
-Then edit that file to give your character a name, personality and message lines
-(see the reference below), restart, and pick it from the menu.
+The tool auto-crops transparent borders and writes a starter `config.json`.
+Edit that file to add a name, personality, and message lines.
 
-> ⚠️ Use art you have the right to use. Official anime/game sprites are
-> copyrighted — great for personal/offline use, but don't redistribute them.
+> Use art you have the right to use. Official anime/game sprites are copyrighted
+> — fine for personal/offline use, but do not redistribute them.
 
 ### `config.json` reference
-Everything is optional; the values below are the defaults.
 
 ```json
 {
   "name": "My Character",
-  "personality": "A short note about this character's vibe.",
+  "personality": "A short description of this character's vibe.",
   "fps": { "idle": 6, "walk": 10, "sleep": 3, "fall": 8 },
   "scale": 2.5,
   "walk_speed": 38,
@@ -213,119 +208,115 @@ Everything is optional; the values below are the defaults.
   },
   "messages": {
     "idle":      ["Drink some water!", "Don't forget to stretch~"],
-    "happy":     ["Yay!", "Hehe~"],
+    "happy":     ["Yay!"],
     "angry":     ["Hey! Stop that!"],
     "sad":       ["Ouch..."],
     "surprised": ["!"],
     "sleepy":    ["Zzz..."]
   },
   "sounds": {
-    "walk": "walk.wav",
-    "sleep": "sleep.wav",
-    "land": "land.wav",
-    "grab": "grab.wav"
+    "walk":  "walk.wav",
+    "land":  "land.wav",
+    "grab":  "grab.wav",
+    "sleep": "sleep.wav"
   }
 }
 ```
 
 | Key | Meaning |
 | --- | --- |
-| `name` | Display name in the menu (defaults to the folder name) |
-| `personality` | Free-text note for whoever edits the messages (not shown in-app) |
+| `name` | Display name in the menu |
+| `personality` | Free-text note (not shown in-app, useful for editing) |
 | `fps` | Playback speed per animation state |
-| `scale` | Base on-screen size multiplier for this character |
+| `scale` | Base size multiplier (global size setting applies on top) |
 | `walk_speed` | Pixels per second while walking |
-| `behavior.idle_min/max` | Seconds to stay idle before re-deciding |
-| `behavior.walk_chance` | Probability of wandering after idling |
+| `behavior.idle_min/max` | Seconds to stay idle before deciding what to do next |
+| `behavior.walk_chance` | Probability of walking after idling |
 | `behavior.sleep_chance` | Probability of napping after idling |
-| `messages` | Speech-bubble lines per mood: `idle` (random chatter), `happy`, `angry`, `sad`, `surprised`, `sleepy`. Any group can be omitted. |
-| `sounds` | Map of event → `.wav` file in the `sounds/` folder. Events: `walk`, `sleep`, `land`, `grab` |
+| `messages` | Lines per mood: `idle`, `happy`, `angry`, `sad`, `surprised`, `sleepy` |
+| `sounds` | `.wav` filenames in `sounds/` for each event |
 
-### Regenerating the bundled art, sounds & emotes
-The default characters (art, sound effects, personality) and the shared mood
-icons are all generated procedurally. To tweak or rebuild them:
+### Regenerating the bundled art and sounds
+
 ```bat
-python tools/generate_sprites.py    REM pixel-art frames + config (incl. messages)
-python tools/generate_sounds.py     REM the .wav sound effects
-python tools/generate_emotes.py     REM the shared mood icons (happy/angry/...)
+python tools/generate_sprites.py    :: pixel-art frames + config (with messages)
+python tools/generate_sounds.py     :: synthesized .wav effects
+python tools/generate_emotes.py     :: shared mood icons
 ```
 
 ---
 
-## 🗂️ Project structure
+## Project structure
 
 ```
 desktop pet/
-├── main.py                 # entry point (DPI setup + app bootstrap)
-├── run.bat                 # double-click launcher (no console window)
-├── build_exe.bat           # build a standalone DesktopPet.exe (PyInstaller)
+├── main.py                 entry point
+├── run.bat                 double-click launcher (no console)
+├── build_exe.bat           build a standalone DesktopPet.exe
 ├── requirements.txt
-├── settings.json           # saved user preferences
-├── reminders.json          # saved reminders (created on first use)
-├── pet/                    # the application package
-│   ├── paths.py            # file locations (works as script or frozen .exe)
-│   ├── config.py           # load/save settings
-│   ├── taskbar.py          # Win32 taskbar position + full-screen detection
-│   ├── animation.py        # sprite-frame animation player
-│   ├── character.py        # loads a character folder (frames/messages/sounds)
-│   ├── behavior.py         # idle/walk/sleep/fall state machine
-│   ├── bubble.py           # the floating speech bubble
-│   ├── emotes.py           # mood-icon loader + modern menu stylesheet
-│   ├── reminders.py        # reminder storage + add-reminder dialog
-│   ├── sound.py            # optional non-blocking sound effects
-│   └── pet_widget.py       # transparent window + emotions + menu + tray
-├── characters/             # one folder per character (drop in your own!)
-│   ├── cat/  slime/  ghost/  naruto/  luffy/
+├── pet/
+│   ├── paths.py            file paths — works as script or frozen .exe
+│   ├── config.py           load/save settings
+│   ├── taskbar.py          Win32 taskbar position + fullscreen detection
+│   ├── animation.py        sprite-frame animation player
+│   ├── character.py        loads a character folder
+│   ├── behavior.py         idle/walk/sleep/fall/drag state machine
+│   ├── bubble.py           floating speech bubble
+│   ├── emotes.py           mood-icon loader + menu stylesheet
+│   ├── reminders.py        reminder storage + add-reminder dialog
+│   ├── sound.py            non-blocking sound effects
+│   └── pet_widget.py       transparent window + emotions + menu + tray
+├── characters/
+│   ├── cat/
+│   ├── slime/
+│   ├── ghost/
+│   ├── naruto/
+│   └── luffy/
 ├── assets/
-│   ├── icon.ico            # app/exe icon
-│   └── emotes/             # shared mood icons (happy, angry, sad, ...)
+│   ├── icon.ico
+│   └── emotes/             mood icons: happy, angry, sad, surprised, music, bell
 ├── tools/
-│   ├── generate_sprites.py # builds the bundled pixel art + configs
-│   ├── generate_sounds.py  # synthesizes the sound effects
-│   ├── generate_emotes.py  # draws the mood icons
-│   └── import_media.py     # turn a GIF / sprite sheet into a character
-└── docs/                   # README images
+│   ├── generate_sprites.py
+│   ├── generate_sounds.py
+│   ├── generate_emotes.py
+│   └── import_media.py
+└── docs/
+    ├── preview.png
+    └── characters.png
 ```
 
 ---
 
-## ⚙️ How it works (in brief)
+## How it works
 
-- **Transparency:** a frameless `QWidget` with `WA_TranslucentBackground` and the
-  `Qt.Tool | WindowStaysOnTopHint` flags — the only thing drawn is the sprite.
-- **Taskbar tracking:** `SHAppBarMessage(ABM_GETTASKBARPOS)` via `ctypes` reports
-  the taskbar's exact rectangle and docked edge; re-checked every couple of
-  seconds so it copes with auto-hide and resolution changes.
-- **Animation:** frames are loaded and pre-scaled once (with a cached mirrored
-  copy for facing direction); a single `QTimer` advances them by delta-time, so
-  speed is independent of the tick rate.
-- **Behaviour:** a small finite-state machine (`idle → walk/sleep`, plus `fall`
-  and `drag`) with gravity for the drop.
-- **Emotions & bubbles:** interactions are classified (quick click = pat, shaky
-  drag = shake, fast landing = hard drop) and trigger a mood; the speech bubble
-  is a second tiny transparent window shown only while talking.
-
----
-
-## 🩹 Troubleshooting
-
-- **"No characters found"** — run `python tools/generate_sprites.py` to create
-  the bundled art.
-- **`ModuleNotFoundError: PyQt5`** — run `pip install -r requirements.txt`.
-- **Pet disappeared** — this is by design while a **full-screen** app (game,
-  video, slideshow) is in front; it comes back when you return to the desktop or
-  a normal window. (A *maximised* window does not hide it — only true
-  full-screen does.)
-- **No tray icon** — harmless; right-click the pet itself to open the menu.
-- **No sound** — make sure **Mute** is off in the menu and your system volume is
-  up. If the `characters/*/sounds/` folders are empty, run
-  `python tools/generate_sounds.py` to recreate the `.wav` files.
+- **Transparency** — a frameless `QWidget` with `WA_TranslucentBackground` and
+  `Qt.Tool | WindowStaysOnTopHint`. Only the sprite is painted.
+- **Taskbar detection** — `SHAppBarMessage(ABM_GETTASKBARPOS)` via ctypes.
+  Re-checked every two seconds to handle auto-hide and resolution changes.
+- **Fullscreen detection** — compares the foreground window rect to the monitor
+  rect once per second. Hides and restores the pet accordingly.
+- **Animation** — frames pre-scaled once at load (with a cached flipped copy for
+  direction). A single `QTimer` advances them by delta-time.
+- **Behaviour** — a finite state machine: `idle → walk / sleep`, plus `fall` and
+  `drag`. Gravity on the fall; impact triggers an emotion.
+- **Speech bubbles** — a second tiny frameless window. Auto-hides after a few
+  seconds.
 
 ---
 
-## 📄 License
+## Troubleshooting
 
-Free to use, modify, and share. The bundled pixel art is generated by the
-included script, so it's yours to remix too. Enjoy your new desktop buddy! 🐱👻🟢
-#   d e s k t o p - p e t  
- 
+| Problem | Fix |
+| --- | --- |
+| `ModuleNotFoundError: PyQt5` | Run `pip install -r requirements.txt` |
+| "No characters found" | Run `python tools/generate_sprites.py` |
+| Pet disappeared | Normal when a **fullscreen** app is active. Returns when you go back to the desktop. |
+| No sound | Check Mute is off in the menu and system volume is up. If `sounds/` folders are empty, run `python tools/generate_sounds.py`. |
+| No tray icon | Harmless. Right-click the pet itself to open the menu. |
+
+---
+
+## License
+
+Free to use, modify, and share. The bundled pixel art and sounds are generated
+by the included scripts, so they are yours to remix too.
