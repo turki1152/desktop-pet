@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desktop Pet — Your Animated Windows Companion</title>
+  <meta name="description" content="A lively animated pet that lives on your Windows taskbar. Reacts to weather, battery, and more. Free download." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">
+        <span class="nav-logo-icon">🐾</span>
+        <span>Desktop Pet</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#characters">Characters</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/turki1152/desktop-pet/releases/download/v1.0.0/DesktopPet.exe" class="nav-cta">Download Free</a>
+      </div>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features" onclick="closeMenu()">Features</a>
+    <a href="#characters" onclick="closeMenu()">Characters</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="https://github.com/turki1152/desktop-pet/releases/download/v1.0.0/DesktopPet.exe" class="mobile-cta" onclick="closeMenu()">Download Free</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Free · Windows 10 & 11
+        </div>
+        <h1 class="hero-title">
+          Your desktop<br />
+          <span class="gradient-text">deserves a pet.</span>
+        </h1>
+        <p class="hero-desc">
+          An animated companion that lives on your taskbar — reacts to your battery, weather, downloads, and even your mood. Pat it, throw it, or just let it wander while you work.
+        </p>
+        <div class="hero-actions">
+          <a href="#download" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Free
+          </a>
+          <a href="#features" class="btn-ghost">See features →</a>
+        </div>
+        <p class="hero-note">No installer required · Auto-starts with Windows · 100% free</p>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-screen">
+            <div class="taskbar-preview">
+              <div class="taskbar-icons">
+                <div class="ti"></div>
+                <div class="ti"></div>
+                <div class="ti"></div>
+              </div>
+              <div class="pet-preview">
+                <div class="pet-sprite">🐱</div>
+                <div class="pet-bubble">Hello! ☀️</div>
+              </div>
+              <div class="taskbar-clock">
+                <span id="clock">12:00</span>
+                <span id="clockDate">Mon 1</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card-glow"></div>
+        </div>
+        <div class="floating-pills">
+          <div class="pill pill-1">🌤 Weather connected</div>
+          <div class="pill pill-2">⚡ Battery: 87%</div>
+          <div class="pill pill-3">😊 Mood: Happy</div>
+          <div class="pill pill-4">💬 Custom lines</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Characters</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Gag animations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Speech lines</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Cost (free forever)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Features</div>
+        <h2 class="section-title">More than just a widget</h2>
+        <p class="section-desc">Your pet actually <em>lives</em> on your screen — it reacts, talks, climbs windows, and gets moody if you ignore it.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feat-card feat-card--large">
+          <div class="feat-icon">🌤</div>
+          <h3>Live Weather Reactions</h3>
+          <p>Set your city and the pet checks real weather. On rainy days it hides under an umbrella. Sunny? It dances. Works with any city worldwide.</p>
+          <div class="feat-tag">wttr.in API</div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">😊</div>
+          <h3>Mood System</h3>
+          <p>Mood changes based on how you treat it — saved between sessions. Ignore it for too long and it sulks.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">🪟</div>
+          <h3>Climbs Your Windows</h3>
+          <p>The pet detects open app windows and hops onto their top edge. Right-click → <strong>Sit on window</strong>.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">🎉</div>
+          <h3>Gags & Animations</h3>
+          <p>Balloon, rocket, portal, moonwalk, freeze, cursor steal — trigger them from the right-click menu any time.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">⚡</div>
+          <h3>PC Reactions</h3>
+          <p>Reacts to low battery, downloads finishing, File Explorer opening, idle time, and more — automatically.</p>
+        </div>
+
+        <div class="feat-card feat-card--large">
+          <div class="feat-icon">🖱</div>
+          <h3>Fully Interactive</h3>
+          <p>Left-click to pat · Double-click to hear it talk · Drag to move it anywhere · Release fast to fling it · Shake it for a surprise reaction.</p>
+          <div class="controls-mini">
+            <div class="ctrl"><kbd>Click</kbd> Pat</div>
+            <div class="ctrl"><kbd>Drag</kbd> Move</div>
+            <div class="ctrl"><kbd>Throw</kbd> Fling</div>
+            <div class="ctrl"><kbd>Shake</kbd> Annoy</div>
+          </div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">💬</div>
+          <h3>Custom Speech Lines</h3>
+          <p>Add your own messages in Settings → Speech. The pet mixes them with its built-in lines.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">🐾</div>
+          <h3>Multiple Pets</h3>
+          <p>Spawn more than one pet — they interact with each other on the taskbar.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">🌨</div>
+          <h3>Seasonal Effects</h3>
+          <p>Snow in winter, cherry blossoms in spring, autumn leaves in fall — automatic based on your system date.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="screenshots" id="screenshots">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Screenshots</div>
+        <h2 class="section-title">See it in action</h2>
+        <p class="section-desc">Living on your taskbar, sitting on windows, reacting to everything.</p>
+      </div>
+
+      <!-- Main big screenshot -->
+      <div class="ss-hero">
+        <div class="ss-hero-img-wrap">
+          <img src="screenshots/taskbar.png" alt="Desktop Pet sitting on the Windows taskbar" class="ss-img" loading="lazy" />
+          <div class="ss-hero-label">
+            <span class="ss-dot"></span>
+            Lives on your taskbar
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-column grid -->
+      <div class="ss-grid">
+        <div class="ss-card">
+          <div class="ss-img-wrap">
+            <img src="screenshots/menu.png" alt="Right-click context menu" class="ss-img" loading="lazy" />
+          </div>
+          <div class="ss-card-info">
+            <div class="ss-card-title">Right-click menu</div>
+            <div class="ss-card-desc">Gags, settings, weather, extra pets — all one click away</div>
+          </div>
+        </div>
+
+        <div class="ss-card">
+          <div class="ss-img-wrap">
+            <img src="screenshots/settings.png" alt="Settings dialog" class="ss-img" loading="lazy" />
+          </div>
+          <div class="ss-card-info">
+            <div class="ss-card-title">Settings</div>
+            <div class="ss-card-desc">Change character, set your city, add custom lines</div>
+          </div>
+        </div>
+
+        <div class="ss-card">
+          <div class="ss-img-wrap">
+            <img src="screenshots/window-sit.png" alt="Pet sitting on top of a window" class="ss-img" loading="lazy" />
+          </div>
+          <div class="ss-card-info">
+            <div class="ss-card-title">Sits on windows</div>
+            <div class="ss-card-desc">Climbs to the top edge of any open app</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHARACTERS -->
+  <section class="characters" id="characters">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Characters</div>
+        <h2 class="section-title">Choose your companion</h2>
+        <p class="section-desc">Each character has its own personality, sound effects, and speech lines. More coming soon.</p>
+      </div>
+      <div class="chars-grid">
+        <div class="char-card">
+          <div class="char-emoji">🐱</div>
+          <div class="char-name">Cat</div>
+          <div class="char-desc">The original. Lazy, curious, and surprisingly wise.</div>
+          <div class="char-badge char-badge--default">Default</div>
+        </div>
+        <div class="char-card">
+          <div class="char-emoji">🟢</div>
+          <div class="char-name">Slime</div>
+          <div class="char-desc">Bouncy, bubbly, and always cheerful. Hard to stay mad at.</div>
+        </div>
+        <div class="char-card">
+          <div class="char-emoji">🍃</div>
+          <div class="char-name">Naruto</div>
+          <div class="char-desc">Runs on the spot, yells about ramen, and never gives up.</div>
+        </div>
+        <div class="char-card">
+          <div class="char-emoji">⚓</div>
+          <div class="char-name">Luffy</div>
+          <div class="char-desc">Carefree pirate energy. Stretches, grins, and eats everything.</div>
+        </div>
+        <div class="char-card char-card--more">
+          <div class="char-emoji">✨</div>
+          <div class="char-name">More soon</div>
+          <div class="char-desc">New characters drop regularly. Import any custom character as a .zip.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="howto">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Getting started</div>
+        <h2 class="section-title">Up and running in 10 seconds</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Download</h3>
+            <p>Click the download button and save <code>DesktopPetSetup.exe</code> anywhere.</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Run it</h3>
+            <p>Double-click to install. If Windows warns you, click <strong>More info → Run anyway</strong>.</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Done</h3>
+            <p>Your pet appears on the taskbar and auto-starts every time you boot Windows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">Common questions</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is it really free?</summary>
+          <p>Yes — completely free, no ads, no account. Download and use forever.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Will it slow down my PC?</summary>
+          <p>No. The app uses less than 30 MB of RAM and almost no CPU. It's designed to be invisible in the background.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Windows says it's unsafe — is it a virus?</summary>
+          <p>No. Windows shows this warning for any new app that hasn't been downloaded by thousands of people yet. Click <strong>More info → Run anyway</strong>. The app is open-source and contains no malware.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I remove it?</summary>
+          <p>Right-click the pet → Settings → scroll to the bottom → <strong>Uninstall</strong>. Or use Windows Settings → Apps → Desktop Pet → Uninstall.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I add my own character?</summary>
+          <p>Yes. Pack your sprite frames into a .zip (see the README for the folder structure) and import it via Settings → Characters → Add Character.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it work on macOS or Linux?</summary>
+          <p>Not yet — currently Windows 10 and 11 only. Other platforms may come later.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD CTA -->
+  <section class="download-cta" id="download">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-blob"></div>
+        <div class="cta-content">
+          <h2>Get your desktop pet today</h2>
+          <p>Free forever · Works on Windows 10 & 11 · No account needed</p>
+          <a href="https://github.com/turki1152/desktop-pet/releases/download/v1.0.0/DesktopPet.exe" class="btn-primary btn-xl">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Free · v1.0.0
+          </a>
+          <p class="cta-note">DesktopPetSetup.exe · ~15 MB</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span>🐾</span> Desktop Pet
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#characters">Characters</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/turki1152/desktop-pet" target="_blank">GitHub</a>
+      </div>
+      <div class="footer-copy">Made with ♥ by tyx · MIT License</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
