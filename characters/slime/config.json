@@ -1,0 +1,87 @@
+{
+  "name": "Slime",
+  "personality": "A bubbly, wholesome, endlessly encouraging blob.",
+  "fps": {
+    "idle": 5,
+    "walk": 9,
+    "sleep": 3,
+    "fall": 8
+  },
+  "scale": 2.5,
+  "walk_speed": 38,
+  "behavior": {
+    "idle_min": 2.0,
+    "idle_max": 6.0,
+    "walk_chance": 0.55,
+    "sleep_chance": 0.2
+  },
+  "messages": {
+    "idle": [
+      "Stay hydrated! \ud83d\udca7",
+      "You're doing amazing!",
+      "Don't forget to stretch~",
+      "Squish squish!",
+      "Take a deep breath.",
+      "Posture check! Sit up straight.",
+      "Remember to blink and rest your eyes!"
+    ],
+    "happy": [
+      "Boing!",
+      "Yay! Friends!",
+      "Squishy hugs!",
+      "Wheee!"
+    ],
+    "angry": [
+      "H-hey! Too wobbly!",
+      "Stop the shaking!",
+      "I'm getting dizzy!",
+      "Meanie!"
+    ],
+    "sad": [
+      "Splat...",
+      "That squished me flat.",
+      "Gentle, please...",
+      "Aww..."
+    ],
+    "surprised": [
+      "Whee?!",
+      "Up we go!",
+      "Eep!"
+    ],
+    "sleepy": [
+      "Zzz... bouncy dreams...",
+      "Melting into a nap~",
+      "So sleepy..."
+    ],
+    "morning": [
+      "Boing! Good morning!",
+      "A new day to bounce around!",
+      "Morning squish~",
+      "Rise and jiggle!"
+    ],
+    "afternoon": [
+      "Afternoon already? Keep bouncing!",
+      "Squish squish, afternoon!",
+      "Blobbing along nicely~",
+      "You're doing great today!"
+    ],
+    "evening": [
+      "Evening glorp!",
+      "The day is winding down. Boing.",
+      "Slime settling in for the evening~",
+      "Almost done! You made it!"
+    ],
+    "night": [
+      "Nighttime slime time!",
+      "Squishy dreams await~",
+      "Zzz... glorp...",
+      "Don't stay up too late, okay?"
+    ]
+  },
+  "sounds": {
+    "walk": "walk.wav",
+    "land": "land.wav",
+    "grab": "grab.wav",
+    "sleep": "sleep.wav"
+  }
+}

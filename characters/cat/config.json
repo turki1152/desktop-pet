@@ -1,0 +1,85 @@
+{
+  "name": "Cat",
+  "personality": "A lazy, sassy, secretly-affectionate house cat.",
+  "fps": {
+    "idle": 6,
+    "walk": 10,
+    "sleep": 3,
+    "fall": 8
+  },
+  "scale": 2.5,
+  "walk_speed": 38,
+  "behavior": {
+    "idle_min": 2.0,
+    "idle_max": 6.0,
+    "walk_chance": 0.55,
+    "sleep_chance": 0.2
+  },
+  "messages": {
+    "idle": [
+      "Feed me, human.",
+      "Drink some water. \ud83d\udca7",
+      "Five more minutes...",
+      "Pet me. Now.",
+      "Is it nap o'clock yet?",
+      "Stretch those legs!",
+      "I knocked something off your desk. You're welcome."
+    ],
+    "happy": [
+      "Purrr~",
+      "Okay, you may pet me.",
+      "Hehe, that tickles!",
+      "Fine... I like you."
+    ],
+    "angry": [
+      "Hey! Put me down!",
+      "Hiss! Stop shaking me!",
+      "Rude!",
+      "I'll remember this."
+    ],
+    "sad": [
+      "Ow... my tail.",
+      "That was a long fall...",
+      "Be gentle, please.",
+      "Mrrp... ouch."
+    ],
+    "surprised": [
+      "Wha\u2014?!",
+      "Hey!",
+      "Mrow?!"
+    ],
+    "sleepy": [
+      "Zzz... fish...",
+      "Nap time. Shhh.",
+      "Do not disturb."
+    ],
+    "morning": [
+      "Ugh, morning already?",
+      "Humans are awake so early. Disgusting.",
+      "I was sleeping. Now I'm not. Thanks.",
+      "Coffee first. Everything else later."
+    ],
+    "afternoon": [
+      "This sunbeam is mine.",
+      "Keep working. I'll supervise.",
+      "Post-lunch nap sounds ideal.",
+      "Afternoon already? Good."
+    ],
+    "evening": [
+      "Almost dinner time. I've been counting the minutes.",
+      "The sun is setting. My favorite.",
+      "Evening. Slightly less terrible than morning."
+    ],
+    "night": [
+      "You're still up? Humans are weird.",
+      "Go to sleep. I can't nap with you staring.",
+      "The night is mine. You can have a small piece."
+    ]
+  },
+  "sounds": {
+    "walk": "walk.wav",
+    "land": "land.wav",
+    "grab": "grab.wav",
+    "sleep": "sleep.wav"
+  }
+}

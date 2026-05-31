@@ -1,0 +1,87 @@
+{
+  "name": "Naruto",
+  "personality": "An energetic, never-give-up ninja-in-training.",
+  "fps": {
+    "idle": 6,
+    "walk": 10,
+    "sleep": 3,
+    "fall": 8
+  },
+  "scale": 2.5,
+  "walk_speed": 38,
+  "behavior": {
+    "idle_min": 2.0,
+    "idle_max": 6.0,
+    "walk_chance": 0.55,
+    "sleep_chance": 0.2
+  },
+  "messages": {
+    "idle": [
+      "Believe it!",
+      "Gonna be Hokage someday!",
+      "Ramen time! \ud83c\udf5c",
+      "Train hard, hydrate harder! \ud83d\udca7",
+      "Never give up \u2014 but take breaks!",
+      "Dattebayo!",
+      "Stretch, then back to training!"
+    ],
+    "happy": [
+      "Yatta!",
+      "Hehe, that's my friend!",
+      "Believe it!",
+      "You're awesome, ya know!"
+    ],
+    "angry": [
+      "Hey! Knock it off!",
+      "Grr, not cool!",
+      "Put me down, dattebayo!",
+      "You wanna fight?!"
+    ],
+    "sad": [
+      "Ow... that hurt.",
+      "I won't cry... okay, maybe a little.",
+      "Be nice, will ya?",
+      "That was a rough one..."
+    ],
+    "surprised": [
+      "Huh?!",
+      "Whoa!",
+      "Dattebayo?!"
+    ],
+    "sleepy": [
+      "Zzz... ramen dreams...",
+      "Even ninjas nap.",
+      "So sleepy..."
+    ],
+    "morning": [
+      "Rise and shine! A shinobi is always ready!",
+      "Morning training starts NOW, dattebayo!",
+      "New day, new chance to get closer to Hokage!",
+      "Up early? That's the ninja way!"
+    ],
+    "afternoon": [
+      "Keep pushing! The afternoon is not over!",
+      "Hard work beats talent! Keep going!",
+      "Even Hokage take lunch breaks. One only!",
+      "Ramen for lunch? Yes please!"
+    ],
+    "evening": [
+      "Another day of hard work — you did it!",
+      "Evening ramen sounds perfect right now...",
+      "Almost time to rest, but never give up!",
+      "The village is quiet in the evening."
+    ],
+    "night": [
+      "Even at night, a ninja stays vigilant!",
+      "Rest up. Tomorrow's training will be tougher!",
+      "Dream of getting stronger, believe it!",
+      "Night missions are the best missions."
+    ]
+  },
+  "sounds": {
+    "walk": "walk.wav",
+    "land": "land.wav",
+    "grab": "grab.wav",
+    "sleep": "sleep.wav"
+  }
+}
